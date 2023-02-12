@@ -13,7 +13,7 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         String score = "";
-        int tempScore = 0;
+        int tempScore;
         if (player1Score == player2Score) {
             switch (player1Score) {
                 case 0:
