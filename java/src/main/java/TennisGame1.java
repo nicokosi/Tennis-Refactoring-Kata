@@ -15,21 +15,12 @@ public class TennisGame1 implements TennisGame {
         String score = "";
         int tempScore;
         if (player1Score == player2Score) {
-            switch (player1Score) {
-                case 0:
-                    score = "Love-All";
-                    break;
-                case 1:
-                    score = "Fifteen-All";
-                    break;
-                case 2:
-                    score = "Thirty-All";
-                    break;
-                default:
-                    score = "Deuce";
-                    break;
-
-            }
+            score = switch (player1Score) {
+                case 0 -> "Love-All";
+                case 1 -> "Fifteen-All";
+                case 2 -> "Thirty-All";
+                default -> "Deuce";
+            };
         } else if (player1Score >= 4 || player2Score >= 4) {
             int minusResult = player1Score - player2Score;
             if (minusResult == 1) score = "Advantage player1";
